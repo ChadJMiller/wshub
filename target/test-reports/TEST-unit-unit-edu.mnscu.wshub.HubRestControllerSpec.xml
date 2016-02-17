@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="localhost" name="edu.mnscu.wshub.HubRestControllerSpec" skipped="0" tests="1" time="1.551" timestamp="2016-02-10T13:21:37">
+  <properties />
+  <testcase classname="edu.mnscu.wshub.HubRestControllerSpec" name="test filter authenticates/rejects request appropriately" time="1.542" />
+  <system-out><![CDATA[--Output from test filter authenticates/rejects request appropriately--
+]]></system-out>
+  <system-err><![CDATA[--Output from test filter authenticates/rejects request appropriately--
+]]></system-err>
+</testsuite>

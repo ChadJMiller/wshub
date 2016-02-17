@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" hostname="localhost" id="0" name="CryptoServiceSpec" package="edu.mnscu.crypto" skipped="0" tests="3" time="1.744" timestamp="2016-02-10T13:21:35">
+      <properties />
+
+      <testcase classname="edu.mnscu.crypto.CryptoServiceSpec" name="test encrypt/decrypt AES" time="1.647" />
+
+      <testcase classname="edu.mnscu.crypto.CryptoServiceSpec" name="test hmacsha256" time="0.031" />
+
+      <testcase classname="edu.mnscu.crypto.CryptoServiceSpec" name="test encrypt/decrypt RSA" time="0.017" />
+
+      <system-out><![CDATA[--Output from test encrypt/decrypt AES--
+--Output from test hmacsha256--
+--Output from test encrypt/decrypt RSA--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from test encrypt/decrypt AES--
+--Output from test hmacsha256--
+--Output from test encrypt/decrypt RSA--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="localhost" id="1" name="HubRestControllerSpec" package="edu.mnscu.wshub" skipped="0" tests="1" time="1.551" timestamp="2016-02-10T13:21:37">
+      <properties />
+
+      <testcase classname="edu.mnscu.wshub.HubRestControllerSpec" name="test filter authenticates/rejects request appropriately" time="1.542" />
+
+      <system-out><![CDATA[--Output from test filter authenticates/rejects request appropriately--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from test filter authenticates/rejects request appropriately--
+]]></system-err>
+
+  </testsuite>
+</testsuites>
