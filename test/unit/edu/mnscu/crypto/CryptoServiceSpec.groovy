@@ -75,6 +75,7 @@ class CryptoServiceSpec extends Specification {
       when: "When"
         def encryptedResult = service.encrypt(str, key, "AES")
         def decryptedResult = service.decrypt(encryptedResult, key, "AES")
+        println "[original: ${str}, encrypted: ${encryptedResult}, decryptedResult: ${decryptedResult}]"
       then: "Then"
         str == decryptedResult
 
@@ -99,6 +100,9 @@ class CryptoServiceSpec extends Specification {
       given: "Given a key"
         KeySpec privateKeySpec = new PKCS8EncodedKeySpec(privateRsaKey.decodeBase64())
         KeySpec publicKeySpec = new X509EncodedKeySpec(publicRsaKey.decodeBase64())
+
+        println privateKeySpec 
+        println publicKeySpec
         KeyFactory keyFactory = KeyFactory.getInstance("RSA")
         Key privateKey = keyFactory.generatePrivate(privateKeySpec)
         Key publicKey = keyFactory.generatePublic(publicKeySpec)
@@ -107,6 +111,29 @@ class CryptoServiceSpec extends Specification {
       when: "When"
         def encryptedResult = service.encrypt(str, publicKey, "RSA")
         def decryptedResult = service.decrypt(encryptedResult, privateKey, "RSA")
+        println "[original: ${str}, encrypted: ${encryptedResult}, decryptedResult: ${decryptedResult}]"
+
+      then: "Then"
+        str == decryptedResult
+    }
+
+    void "test encrypt/decrypt RSA - with public/private key usage reversed"() {
+        println "dave is here"
+      given: "Given a key"
+        KeySpec privateKeySpec = new PKCS8EncodedKeySpec(privateRsaKey.decodeBase64())
+        KeySpec publicKeySpec = new X509EncodedKeySpec(publicRsaKey.decodeBase64())
+
+        println privateKeySpec 
+        println publicKeySpec
+        KeyFactory keyFactory = KeyFactory.getInstance("RSA")
+        Key privateKey = keyFactory.generatePrivate(privateKeySpec)
+        Key publicKey = keyFactory.generatePublic(publicKeySpec)
+      and:
+        def str = "abc123"
+      when: "When"
+        def encryptedResult = service.encrypt(str, privateKey, "RSA")
+        def decryptedResult = service.decrypt(encryptedResult, publicKey, "RSA")
+        println "[original: ${str}, encrypted: ${encryptedResult}, decryptedResult: ${decryptedResult}]"
 
       then: "Then"
         str == decryptedResult

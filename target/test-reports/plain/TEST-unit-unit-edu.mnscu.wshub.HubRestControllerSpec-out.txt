@@ -1,1 +1,0 @@
---Output from test filter authenticates/rejects request appropriately--
